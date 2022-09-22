@@ -28,13 +28,13 @@ parser = argparse.ArgumentParser(description='Attention Concatenation Volume for
 parser.add_argument('--model', default='acvspc', help='select a model structure', choices=__models__.keys())
 parser.add_argument('--maxdisp', type=int, default=192, help='maximum disparity')
 parser.add_argument('--dataset', default='kitti_spc_multi', help='dataset name', choices=__datasets__.keys())
-parser.add_argument('--datapath', default='/data/sagnik/kitti_spc', help='data path')
+parser.add_argument('--datapath', default='/data/sagnik/kitti_spc/', help='data path')
 parser.add_argument('--num_frames_sh', default=25, help='num frames avg short exp')
 parser.add_argument('--num_frames_med', default=75, help='num frames avg med exp')
 parser.add_argument('--num_frames_lg', default=201, help='num frames avg long exp')
 #parser.add_argument('--kitti12_datapath', default='/home/xgw/data/KITTI_2012/', help='data path')
-parser.add_argument('--trainlist', default='./filenames/kitti12_15_all.txt', help='training list')
-parser.add_argument('--testlist',default='./filenames/kitti15_val.txt', help='testing list')
+parser.add_argument('--trainlist', default='./filenames/kitti_spc_train.txt', help='training list')
+parser.add_argument('--testlist',default='./filenames/kitti_spc_test.txt', help='testing list')
 parser.add_argument('--lr', type=float, default=0.001, help='base learning rate')
 parser.add_argument('--batch_size', type=int, default=3, help='training batch size')
 parser.add_argument('--test_batch_size', type=int, default=3, help='testing batch size')
@@ -51,7 +51,7 @@ parser.add_argument('--save_freq', type=int, default=100, help='the frequency of
 args = parser.parse_args()
 torch.manual_seed(args.seed)
 torch.cuda.manual_seed(args.seed)
-exp_name = ""
+exp_name = "base1"
 os.makedirs(os.path.join(args.logdir, exp_name), exist_ok=True)
 
 # create summary logger
