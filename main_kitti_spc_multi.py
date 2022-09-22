@@ -145,7 +145,7 @@ def train():
 # train one sample
 def train_sample(sample, compute_metrics=False):
     model.train()
-    imgL_sh, imgR_sh, imgL_med, imgR_med, imgL_lg, imgR_lg, disp_gt = sample['left'], sample['right'], sample['disparity']
+    imgL_sh, imgR_sh, imgL_med, imgR_med, imgL_lg, imgR_lg, disp_gt = sample['left_sh'], sample['right_sh'], sample['left_med'], sample['right_med'], sample['left_lg'], sample['right_lg'], sample['disparity']
     imgL_sh = imgL_sh.cuda()
     imgR_sh = imgR_sh.cuda()
     imgL_med = imgL_med.cuda()
