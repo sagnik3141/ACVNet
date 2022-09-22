@@ -58,7 +58,7 @@ class KITTIDatasetSPC(Dataset):
         #     self.datapath = self.datapath_12
 
         left_img_sh, left_img_med, left_img_lg = self.load_image(os.path.join(self.datapath, self.left_filenames[index]))
-        right_img_sh, left_img_med, left_img_lg = self.load_image(os.path.join(self.datapath, self.right_filenames[index]))
+        right_img_sh, right_img_med, right_img_lg = self.load_image(os.path.join(self.datapath, self.right_filenames[index]))
 
         if self.disp_filenames:  # has disparity ground truth
             disparity = self.load_disp(os.path.join(self.datapath, self.disp_filenames[index]))
