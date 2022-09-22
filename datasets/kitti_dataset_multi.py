@@ -9,7 +9,7 @@ import torchvision.transforms as transforms
 import torch
 import matplotlib.pyplot as plt
 
-class KITTIDataset(Dataset):
+class KITTIDatasetSPC(Dataset):
     def __init__(self, datapath, list_filename, num_frames_sh, num_frames_med, num_frames_lg, training):
         self.datapath = datapath
         #self.datapath_12 = kitti12_datapath
