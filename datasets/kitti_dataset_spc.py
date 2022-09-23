@@ -66,7 +66,7 @@ class KITTIDatasetSPCSingle(Dataset):
             disparity = None
 
         
-        h, w, _ = left_img_sh.shape
+        h, w, _ = left_img.shape
         crop_w, crop_h = 480, 256
 
         x1 = random.randint(0, w - crop_w)
