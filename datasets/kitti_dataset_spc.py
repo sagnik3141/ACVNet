@@ -34,7 +34,7 @@ class KITTIDatasetSPCSingle(Dataset):
 
     def load_image(self, filename):
         img = np.load(filename)
-        img = np.mean(img[128-self.num_frames_sh//2:129+self.num_frames_sh], axis=0)
+        img = np.mean(img[128-self.num_frames//2:129+self.num_frames], axis=0)
         #img_med = np.mean(img[128-self.num_frames_med//2:129+self.num_frames_med], axis=0)
         #img_lg = np.mean(img[128-self.num_frames_lg//2:129+self.num_frames_lg], axis=0)
 
