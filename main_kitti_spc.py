@@ -14,7 +14,7 @@ import numpy as np
 import time
 from tensorboardX import SummaryWriter
 from datasets import __datasets__
-from models import __models__, model_loss_train_spc, model_loss_test
+from models import __models__, model_loss_train_spc, model_loss_test, model_loss_train
 from utils import *
 from torch.utils.data import DataLoader
 import gc
@@ -158,7 +158,7 @@ def train_sample(sample, compute_metrics=False):
     mask = (disp_gt < args.maxdisp) & (disp_gt > 0)
     loss = model_loss_train(disp_ests, disp_gt, mask)
     scalar_outputs = {"loss": loss}
-    image_outputs = {"disp_est": disp_ests, "disp_gt": disp_gt, "imgL": imgL_med, "imgR": imgR_med}
+    image_outputs = {"disp_est": disp_ests, "disp_gt": disp_gt, "imgL": imgL, "imgR": imgR}
     if compute_metrics:
         with torch.no_grad():
             image_outputs["errormap"] = [disp_error_image_func.apply(disp_est, disp_gt) for disp_est in disp_ests]
